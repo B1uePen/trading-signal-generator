@@ -1,6 +1,6 @@
-**Algorithmic Trading Signal Generation for BTC/USDT Perpetual Futures using Policy Gradient Optimization, Temporal-Difference Learning, and Genetic Algorithms under strict Out-Of-Sample backtesting.**
+# Algorithmic Trading Signal Generation for BTC/USDT Perpetual Futures
 
-A Python quantitative research framework for direct-learning trading signal generation on the **BTC/USDT perpetual futures** market. Instead of predicting next-candle prices via MSE regression, the system trains three distinct direct-learning agents—**Direct Policy Gradient**, **Q-Learning**, and a **Genetic Algorithm**—to output discrete trading decisions (`Long`, `Short`, or `Cash`) directly against risk-adjusted net returns inside a realistic **Triple-Barrier (`1:3`)** execution simulator.
+A Python quantitative research framework for direct-learning trading signal generation on the **BTC/USDT perpetual futures** market. Instead of predicting next-candle prices via MSE regression, the system trains three distinct direct-learning agents-**Direct Policy Gradient**, **Q-Learning**, and a **Genetic Algorithm**-to output discrete trading decisions (`Long`, `Short`, or `Cash`) directly against risk-adjusted net returns inside a realistic **Triple-Barrier (`1:3`)** execution simulator.
 
 ---
 
@@ -34,9 +34,9 @@ A Python quantitative research framework for direct-learning trading signal gene
 3. **Genetic Algorithm:** Population-based evolutionary search (`150` chromosomes, `40` generations, correlation-seeded initialization, `15%` elitism, 5-way tournament selection, crossover, and Gaussian mutation) optimizing risk-adjusted fitness with a drawdown penalty (`β = 2.5`).
 
 ### Baseline Benchmarks
-- **B0 — Buy & Hold BTC:** Passive holding across the 24-month test window (`0.10%` round-trip fee).
-- **B1 — Naive Always-Long (1:3):** Continuously re-enters `Long` (`1x`) after every barrier exit without market filtering.
-- **B2 — Random Monte-Carlo (1:3):** Average of `1,000` random trading simulations (`10%` Long / `10%` Short / `80%` Cash; `75%` `1x` / `25%` `2x`), used to compute empirical `p-values`.
+- **B0 - Buy & Hold BTC:** Passive holding across the 24-month test window (`0.10%` round-trip fee).
+- **B1 - Naive Always-Long (1:3):** Continuously re-enters `Long` (`1x`) after every barrier exit without market filtering.
+- **B2 - Random Monte-Carlo (1:3):** Average of `1,000` random trading simulations (`10%` Long / `10%` Short / `80%` Cash; `75%` `1x` / `25%` `2x`), used to compute empirical `p-values`.
 
 ---
 
@@ -49,7 +49,7 @@ A Python quantitative research framework for direct-learning trading signal gene
 | **Q-Learning** | +65.56% | +28.67% | +2.07 | +3.28 | **23.32%** | **-2.36%** | 39.9% | 1.14 | 474 | 0.0190 |
 | **B0: Buy & Hold BTC** | +31.46% | +14.66% | +0.53 | +0.75 | 53.77% | -8.34% | 100.0% | 1.50 | 1 | 0.0839 |
 | **B1: Always-Long (1:3)** | -100.00% | -100.00% | -3.42 | -4.22 | 100.00% | -100.00% | 34.5% | 0.86 | 744 | 0.7013 |
-| **B2: Random MC (1:3)** | -63.44% | -59.54% | -2.26 | -2.88 | 84.12% | — | 35.6% | 0.88 | 564 | 0.4376 |
+| **B2: Random MC (1:3)** | -63.44% | -59.54% | -2.26 | -2.88 | 84.12% | - | 35.6% | 0.88 | 564 | 0.4376 |
 
 ### Key Takeaways
 - All three direct-learning models achieved statistically significant outperformance (`p < 0.02`), delivering **2.1×–3.5× higher net return** than Buy & Hold while cutting peak-to-trough drawdown by more than half (`23.32%–25.60%` vs `53.77%`).
