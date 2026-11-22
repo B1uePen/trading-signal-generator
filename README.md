@@ -1,6 +1,4 @@
-Algorithmic Trading Signal Generation for BTC/USDT Perpetual Futures
-
-Algorithmic trading signal generation using Policy Gradient Optimization, Temporal-Difference Learning, and Genetic Algorithms under strict Out-Of-Sample backtesting.
+Algorithmic Trading Signal Generation for BTC/USDT Perpetual Futures using Policy Gradient Optimization, Temporal-Difference Learning, and Genetic Algorithms under strict Out-Of-Sample backtesting.
 
 A Python quantitative research framework for direct-learning trading signal generation on the **BTC/USDT perpetual futures** market. Instead of predicting next-candle prices via MSE regression, the system trains three distinct direct-learning agents—**Direct Policy Gradient**, **Q-Learning**, and a **Genetic Algorithm**—to output discrete trading decisions (`Long`, `Short`, or `Cash`) directly against risk-adjusted net returns inside a realistic **Triple-Barrier (`1:3`)** execution simulator.
 
